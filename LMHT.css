@@ -5,10 +5,15 @@
   list-style: none;
   box-sizing: border-box;
 }
-
-
+body {
+  padding-top: 70px;
+}
 
 #Header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
   background-color: #101215;
   height: 70px;
   width: 100%;
@@ -21,13 +26,14 @@
   margin: 0 auto;
   display: flex;
 }
-.logo, .logo a{
+
+.logo a {
   display: flex;
   align-items: center;
+  padding: 5px 0;
 }
 
-
-.Menu-top{
+.Menu-top {
   list-style: none;
   text-align: center;
   width: 100%;
@@ -37,183 +43,188 @@
   align-items: center;
 }
 
-.Menu-top li{
+.Menu-top li {
   width: 16.67%;
   height: 100%;
   display: inline;
 }
-.Menu-top a{
+.Menu-top li a {
+  position: relative;
   width: 100%;
   height: 100%;
   color: tan;
-  font-weight: 700;
+  font-weight: 750;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
+  text-decoration: none;
 }
-.sub-menu{
+.sub-menu {
   background-color: rgb(79, 79, 119);
   width: 100%;
   visibility: hidden;
 }
-.Menu-top a::after{
+.Menu-top a::after {
   content: "";
   height: 3px;
   text-decoration: none;
   width: 0;
-  background:rgb(150, 169, 243) ;
+  background: rgb(150, 169, 243);
   transition: 0.5s;
   position: absolute;
   bottom: 0;
 }
-.Menu-top a:hover::after{
+.Menu-top a:hover::after {
   width: 100%;
 }
-
 
 #Banner {
   background: url(../LMHT/img/background.jpg);
   height: 400px;
   margin: auto;
 }
-.slide{
+.slide {
   width: 1000px;
   height: 80%;
   position: relative;
-  /* overflow: hidden; */
+  overflow: hidden;
   margin: auto;
 }
-.carousel{
+.carousel {
   top: 20px;
 }
 
-.carousel-inner img{
-  width:100%;
+.carousel-inner img {
+  width: 100%;
   height: 100%;
 }
-.carousel-indicators{
+.carousel-indicators {
   width: 100%;
   margin: 0 !important;
   position: absolute;
   top: 340px;
   background-color: red;
-  
+}
+.slide a {
+  top: 160px;
+  margin: 0 -45px 0 -45px;
 }
 
-.slide a{
-  display: none;
+.slide a {
+  display: block;
+  align-items: center;
 }
 
 #Container {
-  background: rgb(150, 169, 243);
+  background: rgb(233 236 249);
   height: 1000px;
 }
-.main_nav{
+.main_nav {
   width: 1000px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   position: relative;
   top: 50px;
-  flex-wrap:wrap ;
+  flex-wrap: wrap;
   justify-items: center;
 }
 
-.main_nav a{
+.main_nav a {
   color: #101215;
   width: 300px;
   display: block;
   text-decoration: none;
   height: 370px;
 }
-.main_nav a b{
+.main_nav a b {
   color: rgb(16, 136, 136);
 }
-.main_nav a h3{
+.main_nav a h3 {
   font-weight: 800;
 }
 
-.main_nav img{
+.main_nav img {
   position: relative;
   width: 100%;
   height: 194px;
-  
 }
-.main_nav h3{
+.main_nav h3 {
   font-size: 15px;
 }
-.main_nav a p{
+.main_nav a p {
   top: 10px;
   margin: 0 auto;
 }
-.main_nav a:hover{
+.main_nav a:hover {
   text-decoration: none;
 }
-.Menu{
+.Menu {
   flex: 1;
 }
-.footer{
+.footer {
   height: 400px;
   background: #101215;
   position: relative;
 }
-.footer .container{
+.footer .container {
   position: relative;
   width: 1200px;
   background: #101215;
   height: 70%;
-  margin:  0 auto;
+  margin: 0 auto;
   top: 50px;
-} 
-.container .logo{
+}
+.container .logo {
   position: relative;
-  margin: auto ;
+  margin: auto;
   width: 300px;
 }
-.container .logo .img{
+.container .logo .img {
   margin: 0 auto;
 }
-.footer .container .cnt{
+.footer .container .cnt {
   position: relative;
   /* display: block; */
 }
-.cnt .text{
+.cnt .text {
   position: relative;
-  width: 75%;
+  width: 80%;
   margin: 0 auto;
   top: 30px;
   color: aliceblue;
 }
-.text h5{
+.text h5 {
   text-align: center;
-  font-size: 12px;
+  font-size: 14px;
 }
-.cnt .link{
+.cnt .link {
   position: relative;
-  width: 40%;
+  width: 50%;
   margin: 0 auto;
   top: 40px;
   display: flex;
   color: aliceblue;
 }
 
-.cnt .link a{
+.cnt .link a {
   margin: 0 auto;
   display: flex;
-  height: 20px;
+  height: 24px;
+  justify-content: center;
+  align-items: center;
 }
-.cnt .link img{
-  background-color: rgb(246, 245, 245);
-  border-radius: 50%;
+.cnt .link a i {
+  margin-right: 5px;
 }
-.cnt .link h6{
+
+.cnt .link a h6 {
   position: relative;
-  font-size: 12px;
-  top: 2px;
+  font-size: 14px;
+  top: 3px;
   color: aliceblue;
 }
-.cnt .play{
+.cnt .play {
   width: 30%;
   height: 50px;
   position: relative;
@@ -222,13 +233,15 @@
   display: flex;
   justify-content: space-between;
 }
-.cnt .play img{
+.cnt .play img {
   height: 100%;
 }
-.cnt .play a{
+.cnt .play a {
   display: inline-block;
   color: aliceblue;
   width: 180px;
   line-height: 50px;
   background: url(img/footer_playfree.png);
+  text-align: center;
+  font-weight: 600;
 }
